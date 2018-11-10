@@ -1,0 +1,21 @@
+Three points: Bottom left, top middle, bottom right
+draw a bezier curve between them
+            .p2
+
+     .p1          .p3
+
+
+ .   .   .   .   <- user drew these
+   .   .   .     <- these are q0-qn
+      ...
+
+      . .       <- when two points are left, draw the interpolated point
+
+
+(x0,y0) ---- (x1,y1)
+x-offset = (x1-x0)*t
+y-offset = (y1-y0)*t
+x = x0 + ((x1 - x0)*t)
+
+[p0, ..., pN]
+new [length-1]  // has the in-between points
